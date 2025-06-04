@@ -3,60 +3,68 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Yeshivat Torat Yosef - Home</title>
+  <title>Yeshivat Torat Yosef of South FL - Home</title>
   <style>
     :root {
       --primary-bg: #fff;
       --primary-text: rgb(0, 33, 65);
-      --secondary-bg: rgb(0, 33, 65);
       --accent: #7F0031;
-      --hover: #590023;
+      --accent-light: #a20042;
+      --nav-bg: rgb(0, 33, 65);
+      --nav-text: #fff;
+      --nav-hover: #7F0031;
     }
 
-    body {
-      margin: 0;
+    /* Reset and base */
+    body, html {
+      margin: 0; padding: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: var(--primary-bg);
       color: var(--primary-text);
       height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     nav {
-      background-color: var(--secondary-bg);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      background-color: var(--nav-bg);
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 2rem;
       padding: 1rem 0;
-      flex-shrink: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     nav a {
-      color: var(--primary-bg);
+      color: var(--nav-text);
       text-decoration: none;
-      padding: 0.5rem 1rem;
       font-weight: 600;
-      transition: color 0.3s;
+      font-size: 1.1rem;
+      padding-bottom: 4px;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.3s, color 0.3s;
     }
 
     nav a.active {
-      border-bottom: 3px solid var(--accent);
+      border-bottom-color: var(--accent);
       color: var(--accent);
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--accent-light);
+      border-bottom-color: var(--accent-light);
     }
 
     .slideshow-container {
       position: relative;
-      flex-grow: 1;
       max-width: 900px;
       margin: 2rem auto;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 0 15px rgba(127, 0, 49, 0.4);
+      min-height: 400px; /* Ensures slideshow always has height */
+      flex-grow: 1;
     }
 
     .slide {
@@ -65,11 +73,13 @@
       height: 400px;
       background-size: cover;
       background-position: center;
-      position: relative;
+      position: absolute;
+      top: 0; left: 0;
     }
 
     .slide.active {
       display: block;
+      animation: none; /* no fade, just choppy */
     }
 
     .slide-text {
@@ -77,76 +87,96 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      color: var(--primary-bg);
-      background-color: rgba(127, 0, 49, 0.7);
-      padding: 1rem 2rem;
-      border-radius: 10px;
-      font-size: 2rem;
+      color: white;
+      font-size: 2.5rem;
       font-weight: 700;
-      text-align: center;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+      white-space: nowrap;
       user-select: none;
-      max-width: 80%;
+      pointer-events: none;
     }
 
-    .buy-ticket-btn {
-      display: block;
-      max-width: 200px;
-      margin: 2rem auto;
-      padding: 1rem;
+    .buy-button-container {
       text-align: center;
+      margin: 2rem auto 4rem;
+    }
+
+    .buy-button {
       background-color: var(--accent);
       color: var(--primary-bg);
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
-      border-radius: 8px;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(127, 0, 49, 0.5);
+      transition: background-color 0.3s ease;
       text-decoration: none;
-      box-shadow: 0 4px 10px rgba(127, 0, 49, 0.5);
-      transition: background-color 0.3s;
+      display: inline-block;
     }
 
-    .buy-ticket-btn:hover {
-      background-color: var(--hover);
+    .buy-button:hover {
+      background-color: var(--accent-light);
     }
 
+    /* Responsive */
+    @media (max-width: 600px) {
+      .slide-text {
+        font-size: 1.8rem;
+        padding: 0 10px;
+        white-space: normal;
+        text-align: center;
+        width: 80%;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="active">Home</a>
-    <a href="prizes.html">Prizes</a>
-    <a href="why.html">Why Buy</a>
-  </nav>
+<nav>
+  <a href="index.html" class="active">Home</a>
+  <a href="prizes.html">Prizes</a>
+  <a href="why.html">Why Buy</a>
+</nav>
 
-  <div class="slideshow-container">
-    <div class="slide active" style="background-image: url('https://static.wixstatic.com/media/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg/v1/fill/w_640,h_520,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg');">
-      <div class="slide-text">Join the Yeshiva Family</div>
-    </div>
-    <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg');">
-      <div class="slide-text">Empowering Sephardic Youth</div>
-    </div>
-    <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg');">
-      <div class="slide-text">Support Torah & Tradition</div>
-    </div>
+<div class="slideshow-container" aria-label="Homepage slideshow">
+
+  <div class="slide active" style="background-image: url('https://static.wixstatic.com/media/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg');">
+    <div class="slide-text">Join the Yeshiva Family</div>
   </div>
 
-  <a href="prizes.html" class="buy-ticket-btn">Buy Ticket</a>
+  <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg');">
+    <div class="slide-text">Empowering Sephardic Youth</div>
+  </div>
 
-  <script>
-    const slides = document.querySelectorAll('.slide');
-    let currentIndex = 0;
+  <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg');">
+    <div class="slide-text">Support Torah & Tradition</div>
+  </div>
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-    }
+</div>
 
-    setInterval(() => {
-      currentIndex = (currentIndex + 1) % slides.length;
-      showSlide(currentIndex);
-    }, 3000);
-  </script>
+<div class="buy-button-container">
+  <a href="prizes.html" class="buy-button" aria-label="Buy raffle ticket">Buy Ticket</a>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+  }
+
+  setInterval(nextSlide, 3000); // change every 3 seconds
+</script>
 
 </body>
 </html>
