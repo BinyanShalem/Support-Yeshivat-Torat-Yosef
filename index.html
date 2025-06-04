@@ -2,159 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Yeshivat Torat Yosef Raffle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yeshivat Torat Yosef - Home</title>
   <style>
     :root {
-      --bg: #111;
-      --text: #fff;
-      --accent: #4a90e2;
-      --hover: #357ab8;
+      --primary-bg: #fff;
+      --primary-text: rgb(0, 33, 65);
+      --secondary-bg: rgb(0, 33, 65);
+      --accent: #7F0031;
+      --hover: #590023;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--primary-text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
+      background-color: var(--secondary-bg);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: space-around;
-      padding: 1rem;
-      background-color: #000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      padding: 1rem 0;
+      flex-shrink: 0;
     }
 
     nav a {
-      color: var(--text);
+      color: var(--primary-bg);
       text-decoration: none;
       padding: 0.5rem 1rem;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a.active {
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
       color: var(--accent);
     }
 
     nav a:hover {
-      color: var(--hover);
+      color: var(--accent);
     }
 
-    .hero {
+    .slideshow-container {
       position: relative;
-      text-align: center;
-      color: white;
-    }
-
-    .slideshow {
-      position: relative;
-      width: 100%;
-      height: 90vh;
+      flex-grow: 1;
+      max-width: 900px;
+      margin: 2rem auto;
+      border-radius: 12px;
       overflow: hidden;
+      box-shadow: 0 0 15px rgba(127, 0, 49, 0.4);
     }
 
-    .slides {
+    .slide {
+      display: none;
+      width: 100%;
+      height: 400px;
+      background-size: cover;
+      background-position: center;
       position: relative;
-      width: 100%;
-      height: 100%;
     }
 
-    .slides img {
+    .slide.active {
       display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    }
+
+    .slide-text {
       position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 1s;
-    }
-
-    .slides img.active {
-      opacity: 1;
-    }
-
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .overlay h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem;
-      border-radius: 10px;
-    }
-
-    .overlay a.button {
-      display: inline-block;
-      margin-top: 1rem;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: var(--primary-bg);
+      background-color: rgba(127, 0, 49, 0.7);
       padding: 1rem 2rem;
-      background-color: var(--accent);
-      color: white;
-      border: none;
       border-radius: 10px;
-      font-size: 1.2rem;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      user-select: none;
+      max-width: 80%;
+    }
+
+    .buy-ticket-btn {
+      display: block;
+      max-width: 200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      text-align: center;
+      background-color: var(--accent);
+      color: var(--primary-bg);
+      font-size: 1.3rem;
+      font-weight: 700;
+      border-radius: 8px;
       text-decoration: none;
+      box-shadow: 0 4px 10px rgba(127, 0, 49, 0.5);
       transition: background-color 0.3s;
     }
 
-    .overlay a.button:hover {
+    .buy-ticket-btn:hover {
       background-color: var(--hover);
     }
+
   </style>
 </head>
 <body>
+
   <nav>
     <a href="index.html" class="active">Home</a>
     <a href="prizes.html">Prizes</a>
     <a href="why.html">Why Buy</a>
   </nav>
 
-  <section class="hero">
-    <div class="slideshow">
-      <div class="slides">
-        <img src="https://static.wixstatic.com/media/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg/v1/fill/w_640,h_520,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg" class="active" alt="Kids 1">
-        <img src="https://static.wixstatic.com/media/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg" alt="Kids 2">
-        <img src="https://static.wixstatic.com/media/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg" alt="Kids 3">
-      </div>
-      <div class="overlay">
-        <h1>Support Yeshivat Torat Yosef</h1>
-        <a href="prizes.html" class="button">Buy a Ticket</a>
-      </div>
+  <div class="slideshow-container">
+    <div class="slide active" style="background-image: url('https://static.wixstatic.com/media/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg/v1/fill/w_640,h_520,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/2de2be_add869007b8e48ceae4323d22cbedf44~mv2.jpg');">
+      <div class="slide-text">Join the Yeshiva Family</div>
     </div>
-  </section>
+    <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_a8f5a5e4d1434cee8b4561b79e43fad8~mv2.jpg');">
+      <div class="slide-text">Empowering Sephardic Youth</div>
+    </div>
+    <div class="slide" style="background-image: url('https://static.wixstatic.com/media/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg/v1/fill/w_1879,h_866,al_c,q_85,enc_avif,quality_auto/2de2be_32a2f1b14b574245b3507820a3983b34~mv2.jpg');">
+      <div class="slide-text">Support Torah & Tradition</div>
+    </div>
+  </div>
+
+  <a href="prizes.html" class="buy-ticket-btn">Buy Ticket</a>
 
   <script>
-    const navLinks = document.querySelectorAll('nav a');
-    navLinks.forEach(link => {
-      if (window.location.href.includes(link.getAttribute('href'))) {
-        navLinks.forEach(l => l.classList.remove('active'));
-        link.classList.add('active');
-      }
-    });
+    const slides = document.querySelectorAll('.slide');
+    let currentIndex = 0;
 
-    const images = document.querySelectorAll('.slides img');
-    let current = 0;
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+    }
 
     setInterval(() => {
-      images[current].classList.remove('active');
-      current = (current + 1) % images.length;
-      images[current].classList.add('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
     }, 3000);
   </script>
+
 </body>
 </html>
