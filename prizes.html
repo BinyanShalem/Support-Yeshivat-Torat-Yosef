@@ -2,96 +2,100 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prizes - Yeshivat Torat Yosef Raffle</title>
   <style>
     :root {
-      --bg: #111;
-      --text: #fff;
-      --accent: #4a90e2;
-      --hover: #357ab8;
+      --primary-bg: #fff;
+      --primary-text: rgb(0, 33, 65);
+      --secondary-bg: rgb(0, 33, 65);
+      --accent: #7F0031;
+      --hover: #590023;
     }
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--primary-bg);
+      color: var(--primary-text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
+      background-color: var(--secondary-bg);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       display: flex;
       justify-content: space-around;
-      padding: 1rem;
-      background-color: #000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+      padding: 1rem 0;
+      flex-shrink: 0;
     }
 
     nav a {
-      color: var(--text);
+      color: var(--primary-bg);
       text-decoration: none;
       padding: 0.5rem 1rem;
-      transition: 0.3s;
+      font-weight: 600;
+      transition: color 0.3s;
     }
 
     nav a.active {
-      border-bottom: 2px solid var(--accent);
+      border-bottom: 3px solid var(--accent);
       color: var(--accent);
     }
 
     nav a:hover {
-      color: var(--hover);
+      color: var(--accent);
     }
 
     .container {
       max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
+      flex-grow: 1;
     }
 
     h1 {
       text-align: center;
       margin-bottom: 1rem;
+      color: var(--secondary-bg);
     }
 
     .intro {
       text-align: center;
       font-size: 1.1rem;
       margin-bottom: 2rem;
-      color: #ccc;
-    }
-
-    .prize-row {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
+      color: #555;
     }
 
     .prize {
-      background: #1c1c1c;
-      flex: 1 1 30%;
+      background: #f0f0f0;
+      margin-bottom: 2rem;
       padding: 1rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      border: 2px solid var(--secondary-bg);
+      box-shadow: 0 0 8px rgba(127, 0, 49, 0.15);
       text-align: center;
     }
 
     .prize img {
       width: 100%;
-      max-width: 200px;
+      max-width: 300px;
       height: auto;
       border-radius: 8px;
       margin-bottom: 1rem;
+      border: 2px solid var(--accent);
     }
 
     .prize h2 {
-      color: var(--accent);
+      color: var(--secondary-bg);
       margin-top: 0;
     }
 
     .prize p {
       margin: 0.5rem 0;
+      color: #444;
     }
 
     .buy-links {
@@ -104,10 +108,13 @@
       margin: 0 1rem;
       background-color: var(--accent);
       padding: 0.75rem 1.5rem;
-      color: white;
+      color: var(--primary-bg);
       text-decoration: none;
       border-radius: 5px;
       font-size: 1.1rem;
+      font-weight: 700;
+      box-shadow: 0 4px 8px rgba(127, 0, 49, 0.4);
+      transition: background-color 0.3s;
     }
 
     .buy-links a:hover {
@@ -126,29 +133,27 @@
     <h1>Raffle Prizes</h1>
     <p class="intro">One winner. Their choice of prize. One ticket could change everything. $126 per entry.</p>
 
-    <div class="prize-row">
-      <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Rolex Watch">
-        <h2>Rolex Watch</h2>
-        <p>Timeless luxury and unmatched value — perfect for any milestone or celebration.</p>
-      </div>
+    <div class="prize">
+      <img src="https://via.placeholder.com/300" alt="Rolex Watch" />
+      <h2>Rolex Watch</h2>
+      <p>Timeless luxury and unmatched value — perfect for any milestone or celebration.</p>
+    </div>
 
-      <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Peloton Bike">
-        <h2>Peloton Bike + Home Gym Setup</h2>
-        <p>Upgrade your health journey with a modern fitness setup, delivered to your home.</p>
-      </div>
+    <div class="prize">
+      <img src="https://via.placeholder.com/300" alt="Peloton Bike" />
+      <h2>Peloton Bike + Home Gym Setup</h2>
+      <p>Upgrade your health journey with a modern fitness setup, delivered to your home.</p>
+    </div>
 
-      <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Mystery Prize">
-        <h2>Mystery Prize</h2>
-        <p>Stay tuned for an exciting surprise — announced soon.</p>
-      </div>
+    <div class="prize">
+      <img src="https://via.placeholder.com/300" alt="Mystery Prize" />
+      <h2>Mystery Prize</h2>
+      <p>Stay tuned for an exciting surprise — announced soon.</p>
     </div>
 
     <div class="buy-links">
-      <a href="https://venmo.com">Buy Ticket (Venmo)</a>
-      <a href="https://stripe.com">Buy Ticket (Stripe)</a>
+      <a href="https://venmo.com" target="_blank" rel="noopener">Buy Ticket (Venmo)</a>
+      <a href="https://stripe.com" target="_blank" rel="noopener">Buy Ticket (Stripe)</a>
     </div>
   </div>
 </body>
