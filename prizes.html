@@ -13,11 +13,13 @@
       --hover: #590023;
     }
 
-    body {
+    html, body {
       margin: 0;
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
       background-color: var(--primary-bg);
       color: var(--primary-text);
+      overflow: hidden;
     }
 
     nav {
@@ -48,9 +50,13 @@
 
     .container {
       max-width: 1000px;
-      margin: 2rem auto;
+      margin: 0 auto;
       padding: 1rem;
       text-align: center;
+      height: calc(100% - 96px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     h1 {
@@ -67,6 +73,8 @@
       justify-content: center;
       gap: 2rem;
       flex-wrap: wrap;
+      flex-grow: 1;
+      align-items: center;
     }
 
     .prize {
@@ -96,7 +104,7 @@
     }
 
     .buy-links {
-      margin-top: 2rem;
+      margin-top: 1rem;
     }
 
     .buy-links a {
