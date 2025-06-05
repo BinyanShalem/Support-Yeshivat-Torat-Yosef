@@ -2,73 +2,77 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Why Buy - Yeshivat Torat Yosef Raffle</title>
   <style>
     :root {
-      --primary-bg: #fff;
+      --primary-bg: #ffffff;
       --primary-text: rgb(0, 33, 65);
       --secondary-bg: rgb(0, 33, 65);
       --accent: #7F0031;
       --hover: #590023;
     }
+
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--primary-bg);
       color: var(--primary-text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
+
     nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
       background-color: var(--secondary-bg);
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-around;
-      padding: 1rem 0;
-      flex-shrink: 0;
     }
+
     nav a {
-      color: var(--primary-bg);
+      color: white;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
+
     nav a.active {
       border-bottom: 3px solid var(--accent);
       color: var(--accent);
     }
+
     nav a:hover {
       color: var(--accent);
     }
+
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 2rem auto;
       padding: 1rem;
-      flex-grow: 1;
-    }
-    h1 {
       text-align: center;
-      margin-bottom: 1rem;
+    }
+
+    h1 {
+      color: var(--accent);
+    }
+
+    .reasons {
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .reasons p {
+      margin: 1rem 0;
+    }
+
+    .cta {
+      margin-top: 2rem;
+      font-weight: bold;
+      font-size: 1.2rem;
       color: var(--secondary-bg);
-    }
-    p {
-      margin-bottom: 0.8rem;
-      font-size: 1rem;
-      line-height: 1.4;
-      color: #444;
-    }
-    ul {
-      list-style-type: disc;
-      margin-left: 1.5rem;
-      color: #666;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-    }
-    ul li {
-      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -80,27 +84,19 @@
   </nav>
 
   <div class="container">
-    <h1>Why Buy a Raffle Ticket?</h1>
+    <h1>Why Support Yeshivat Torat Yosef?</h1>
 
-    <p>
-      Yeshivat Torat Yosef is the heart of our Sephardic community in Florida, continuing the traditions of Flatbush with pride.
-    </p>
+    <div class="reasons">
+      <p>Yeshivat Torat Yosef is an all-Sephardic yeshiva dedicated to building the next generation of passionate, learned, and proud Jews from the heart of the Flatbush community — now thriving in South Florida.</p>
 
-    <p>Buying a raffle ticket supports Torah learning and our unique heritage.</p>
+      <p>Your ticket doesn't just enter you for incredible prizes. It helps fund Torah learning, excellent education, and a warm, community-first environment where every student is seen and uplifted.</p>
 
-    <ul>
-      <li><strong>Empower Youth:</strong> Help fund quality Torah education for our children.</li>
-      <li><strong>Preserve Tradition:</strong> Keep Sephardic customs alive for future generations.</li>
-      <li><strong>Build Community:</strong> Unite families in a shared mission of growth.</li>
-      <li><strong>Win Great Prizes:</strong> One winner chooses their prize — all for a worthy cause.</li>
-      <li><strong>Trusted & Transparent:</strong> Contributions directly support students and programs.</li>
-    </ul>
+      <p>Whether you're alumni, family, or part of the broader Sephardic world, your support goes directly to programs that build character, strengthen emunah, and grow true Bnei Torah.</p>
+    </div>
 
-    <p>
-      Tickets are $126 each — a chance to win big while supporting a vital community cause.
-    </p>
-
-    <p>Join us and make a difference today.</p>
+    <div class="cta">
+      Be a part of something eternal. Buy your ticket today.
+    </div>
   </div>
 </body>
 </html>
