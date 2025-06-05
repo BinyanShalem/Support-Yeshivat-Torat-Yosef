@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Prizes - Yeshivat Torat Yosef Raffle</title>
   <style>
     :root {
-      --primary-bg: #fff;
+      --primary-bg: #ffffff;
       --primary-text: rgb(0, 33, 65);
       --secondary-bg: rgb(0, 33, 65);
       --accent: #7F0031;
@@ -15,29 +15,26 @@
 
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background-color: var(--primary-bg);
       color: var(--primary-text);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
     nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding: 1rem 0;
       background-color: var(--secondary-bg);
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: space-around;
-      padding: 1rem 0;
-      flex-shrink: 0;
     }
 
     nav a {
-      color: var(--primary-bg);
+      color: white;
       text-decoration: none;
       padding: 0.5rem 1rem;
-      font-weight: 600;
-      transition: color 0.3s;
+      font-weight: bold;
+      font-size: 1.1rem;
     }
 
     nav a.active {
@@ -50,56 +47,55 @@
     }
 
     .container {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2rem auto;
       padding: 1rem;
-      flex-grow: 1;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
       margin-bottom: 1rem;
-      color: var(--secondary-bg);
     }
 
     .intro {
-      text-align: center;
       font-size: 1.1rem;
       margin-bottom: 2rem;
-      color: #555;
+    }
+
+    .prize-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .prize {
-      background: #f0f0f0;
-      margin-bottom: 2rem;
+      background: #f8f8f8;
+      flex: 1 1 300px;
       padding: 1rem;
       border-radius: 10px;
-      border: 2px solid var(--secondary-bg);
-      box-shadow: 0 0 8px rgba(127, 0, 49, 0.15);
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       text-align: center;
     }
 
     .prize img {
       width: 100%;
-      max-width: 300px;
+      max-width: 200px;
       height: auto;
       border-radius: 8px;
       margin-bottom: 1rem;
-      border: 2px solid var(--accent);
     }
 
     .prize h2 {
-      color: var(--secondary-bg);
+      color: var(--accent);
       margin-top: 0;
     }
 
     .prize p {
       margin: 0.5rem 0;
-      color: #444;
     }
 
     .buy-links {
-      text-align: center;
       margin-top: 2rem;
     }
 
@@ -108,12 +104,10 @@
       margin: 0 1rem;
       background-color: var(--accent);
       padding: 0.75rem 1.5rem;
-      color: var(--primary-bg);
+      color: white;
       text-decoration: none;
       border-radius: 5px;
       font-size: 1.1rem;
-      font-weight: 700;
-      box-shadow: 0 4px 8px rgba(127, 0, 49, 0.4);
       transition: background-color 0.3s;
     }
 
@@ -133,27 +127,29 @@
     <h1>Raffle Prizes</h1>
     <p class="intro">One winner. Their choice of prize. One ticket could change everything. $126 per entry.</p>
 
-    <div class="prize">
-      <img src="https://via.placeholder.com/300" alt="Rolex Watch" />
-      <h2>Rolex Watch</h2>
-      <p>Timeless luxury and unmatched value — perfect for any milestone or celebration.</p>
-    </div>
+    <div class="prize-row">
+      <div class="prize">
+        <img src="https://via.placeholder.com/300" alt="Rolex Watch">
+        <h2>Rolex Watch</h2>
+        <p>Timeless luxury and unmatched value — perfect for any milestone or celebration.</p>
+      </div>
 
-    <div class="prize">
-      <img src="https://via.placeholder.com/300" alt="Peloton Bike" />
-      <h2>Peloton Bike + Home Gym Setup</h2>
-      <p>Upgrade your health journey with a modern fitness setup, delivered to your home.</p>
-    </div>
+      <div class="prize">
+        <img src="https://via.placeholder.com/300" alt="Peloton Bike">
+        <h2>Peloton Bike + Home Gym Setup</h2>
+        <p>Upgrade your health journey with a modern fitness setup, delivered to your home.</p>
+      </div>
 
-    <div class="prize">
-      <img src="https://via.placeholder.com/300" alt="Mystery Prize" />
-      <h2>Mystery Prize</h2>
-      <p>Stay tuned for an exciting surprise — announced soon.</p>
+      <div class="prize">
+        <img src="https://via.placeholder.com/300" alt="Mystery Prize">
+        <h2>Mystery Prize</h2>
+        <p>Stay tuned for an exciting surprise — announced soon.</p>
+      </div>
     </div>
 
     <div class="buy-links">
-      <a href="https://venmo.com" target="_blank" rel="noopener">Buy Ticket (Venmo)</a>
-      <a href="https://stripe.com" target="_blank" rel="noopener">Buy Ticket (Stripe)</a>
+      <a href="https://venmo.com">Buy Ticket (Venmo)</a>
+      <a href="https://stripe.com">Buy Ticket (Stripe)</a>
     </div>
   </div>
 </body>
