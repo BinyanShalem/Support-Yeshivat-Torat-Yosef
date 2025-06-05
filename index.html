@@ -50,34 +50,28 @@
 
     .slideshow-container {
       position: relative;
-      max-width: 900px;
-      margin: 2rem auto;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(127, 0, 49, 0.4);
-      background: #000;
+      max-width: 100%;
+      margin: 0 auto;
       height: 400px;
+      overflow: hidden;
+      background: #000;
     }
 
     .slide {
       display: none;
+      position: absolute;
       width: 100%;
       height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-
-    .slide.active {
-      display: block;
     }
 
     .slide img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
-      background: #000;
-      user-select: none;
+      object-fit: cover;
+    }
+
+    .slide.active {
+      display: block;
     }
 
     .slide-text {
@@ -86,13 +80,12 @@
       left: 50%;
       transform: translate(-50%, -50%);
       color: white;
-      font-size: 2rem;
-      font-weight: 700;
-      background-color: rgba(127, 0, 49, 0.7);
+      background: rgba(127, 0, 49, 0.7);
       padding: 1rem 2rem;
       border-radius: 10px;
+      font-size: 2rem;
+      font-weight: bold;
       text-align: center;
-      user-select: none;
     }
 
     .buy-ticket-btn {
