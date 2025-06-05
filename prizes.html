@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Prizes - Yeshivat Torat Yosef Raffle</title>
   <style>
     :root {
@@ -15,19 +15,23 @@
 
     html, body {
       margin: 0;
-      height: 100%;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      height: 100vh;
       background-color: var(--primary-bg);
       color: var(--primary-text);
-      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow: hidden; /* prevent scroll */
+      display: flex;
+      flex-direction: column;
     }
 
     nav {
+      background-color: var(--secondary-bg);
       display: flex;
       justify-content: center;
       gap: 2rem;
       padding: 1rem 0;
-      background-color: var(--secondary-bg);
+      flex-shrink: 0;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
@@ -37,6 +41,7 @@
       padding: 0.5rem 1rem;
       font-weight: bold;
       font-size: 1.1rem;
+      transition: color 0.3s;
     }
 
     nav a.active {
@@ -49,78 +54,120 @@
     }
 
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 1rem;
-      text-align: center;
-      height: calc(100% - 96px);
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
+      align-items: center;
       justify-content: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+      text-align: center;
     }
 
     h1 {
-      margin-bottom: 1rem;
+      margin: 0 0 0.5rem 0;
+      font-size: 2rem;
     }
 
     .intro {
+      margin: 0 0 1.5rem 0;
       font-size: 1.1rem;
-      margin-bottom: 2rem;
+      max-width: 600px;
     }
 
     .prize-row {
       display: flex;
       justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      flex-grow: 1;
-      align-items: center;
+      gap: 1.5rem;
+      width: 100%;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
     }
 
     .prize {
       background: #f8f8f8;
-      flex: 1 1 300px;
-      padding: 1rem;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      flex: 0 0 30%;
+      min-width: 250px;
+      max-width: 300px;
+      padding: 1rem;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
 
     .prize img {
       width: 100%;
-      max-width: 200px;
       height: auto;
       border-radius: 8px;
       margin-bottom: 1rem;
+      object-fit: contain;
     }
 
     .prize h2 {
       color: var(--accent);
-      margin-top: 0;
+      margin: 0 0 0.5rem 0;
+      font-size: 1.3rem;
     }
 
     .prize p {
-      margin: 0.5rem 0;
+      margin: 0 0 1rem 0;
+      flex-grow: 1;
+      font-size: 1rem;
+      color: rgb(40,40,40);
     }
 
     .buy-links {
       margin-top: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-shrink: 0;
+      padding-bottom: 1rem;
     }
 
     .buy-links a {
-      display: inline-block;
-      margin: 0 1rem;
       background-color: var(--accent);
-      padding: 0.75rem 1.5rem;
       color: white;
       text-decoration: none;
+      padding: 0.75rem 1.5rem;
       border-radius: 5px;
+      font-weight: 600;
       font-size: 1.1rem;
+      box-shadow: 0 4px 8px rgba(127, 0, 49, 0.5);
       transition: background-color 0.3s;
     }
 
     .buy-links a:hover {
       background-color: var(--hover);
+    }
+
+    /* Scrollbar style for prize-row */
+    .prize-row::-webkit-scrollbar {
+      height: 8px;
+    }
+    .prize-row::-webkit-scrollbar-track {
+      background: #eee;
+      border-radius: 4px;
+    }
+    .prize-row::-webkit-scrollbar-thumb {
+      background-color: var(--accent);
+      border-radius: 4px;
+    }
+
+    @media (max-width: 800px) {
+      .prize-row {
+        flex-wrap: nowrap;
+      }
+      .prize {
+        flex: 0 0 80%;
+        max-width: 80%;
+      }
     }
   </style>
 </head>
@@ -137,27 +184,27 @@
 
     <div class="prize-row">
       <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Rolex Watch">
+        <img src="https://via.placeholder.com/300" alt="Rolex Watch" />
         <h2>Rolex Watch</h2>
         <p>Timeless luxury and unmatched value — perfect for any milestone or celebration.</p>
       </div>
 
       <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Peloton Bike">
+        <img src="https://via.placeholder.com/300" alt="Peloton Bike" />
         <h2>Peloton Bike + Home Gym Setup</h2>
         <p>Upgrade your health journey with a modern fitness setup, delivered to your home.</p>
       </div>
 
       <div class="prize">
-        <img src="https://via.placeholder.com/300" alt="Mystery Prize">
+        <img src="https://via.placeholder.com/300" alt="Mystery Prize" />
         <h2>Mystery Prize</h2>
         <p>Stay tuned for an exciting surprise — announced soon.</p>
       </div>
     </div>
 
     <div class="buy-links">
-      <a href="https://venmo.com">Buy Ticket (Venmo)</a>
-      <a href="https://stripe.com">Buy Ticket (Stripe)</a>
+      <a href="https://venmo.com" target="_blank" rel="noopener">Buy Ticket (Venmo)</a>
+      <a href="https://stripe.com" target="_blank" rel="noopener">Buy Ticket (Stripe)</a>
     </div>
   </div>
 </body>
